@@ -38,6 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
+  // Effet d'ombre sur l'en-tête au défilement
+  const header = document.querySelector('.header');
+  const backToTop = document.createElement('button');
+  backToTop.className = 'back-to-top';
+  backToTop.setAttribute('aria-label', 'Retour en haut de page');
+  backToTop.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+  document.body.appendChild(backToTop);
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 40;
+    if (header) header.classList.toggle('is-scrolled', scrolled);
+    backToTop.classList.toggle('is-visible', window.scrollY > 500);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // Formulaire de contact (envoi via client mail, sans backend)
   const form = document.getElementById('contact-form');
   if (form) {
