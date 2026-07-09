@@ -58,8 +58,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Formulaire de contact (envoi via client mail, sans backend)
+  // Formulaire de contact — envoi par email ou par message WhatsApp, sans backend
   const form = document.getElementById('contact-form');
+  const methodBtns = document.querySelectorAll('.contact-method__btn');
+  let contactMethod = 'email';
+
+  methodBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      methodBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      contactMethod = btn.dataset.method;
+      const submitBtn = form && form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = contactMethod === 'whatsapp' ? 'Envoyer sur WhatsApp' : 'Envoyer le message';
+      }
+    });
+  });
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -70,13 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const objet = data.get('objet') || 'Demande de contact';
       const message = data.get('message') || '';
 
-      const body = `Nom : ${nom}%0D%0AEmail : ${email}%0D%0ATéléphone : ${telephone}%0D%0A%0D%0A${message}`;
-      const mailto = `mailto:maitremaho07@gmail.com?subject=${encodeURIComponent(objet)}&body=${body}`;
-
       const successBox = document.querySelector('.form-success');
-      if (successBox) successBox.classList.add('show');
 
-      window.location.href = mailto;
+      if (contactMethod === 'whatsapp') {
+        if (successBox) {
+          successBox.textContent = 'WhatsApp va s\'ouvrir avec votre message pré-rempli à destination du cabinet.';
+          successBox.classList.add('show');
+        }
+        const text = `Bonjour, je suis ${nom}.%0AObjet : ${objet}%0ATéléphone : ${telephone}%0AEmail : ${email}%0A%0A${message}`;
+        window.location.href = `https://wa.me/2250153203637?text=${text}`;
+      } else {
+        if (successBox) {
+          successBox.textContent = 'Votre messagerie va s\'ouvrir avec votre message pré-rempli à destination du cabinet.';
+          successBox.classList.add('show');
+        }
+        const body = `Nom : ${nom}%0D%0AEmail : ${email}%0D%0ATéléphone : ${telephone}%0D%0A%0D%0A${message}`;
+        window.location.href = `mailto:cab.justice.yah@gmail.com?subject=${encodeURIComponent(objet)}&body=${body}`;
+      }
     });
   }
 });
