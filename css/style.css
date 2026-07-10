@@ -1,9 +1,8 @@
 /* =========================================================
    Cabinet YAH — Étude de Commissaire de Justice
    Feuille de style principale
+   (polices Google Fonts chargées via <link> dans le <head> de chaque page)
    ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   /* Palette inspirée de la carte de visite du cabinet */

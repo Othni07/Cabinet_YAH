@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://othni07.github.io/Cabinet_YAH/sitemap.xml
