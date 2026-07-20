@@ -120,40 +120,16 @@
       <h2>Biens actuellement en vente</h2>
     </div>
 
-    <!-- Aperçu à titre d'exemple : à remplacer par les véritables biens mis en vente par le Cabinet YAH -->
-    <!-- Pour ajouter une photo réelle, remplacez le src de l'image ci-dessous par le chemin de la photo du bien, ex: assets/img/ventes/toyota-hilux.jpg -->
-    <p class="sale-note">Exemple d'aperçu — les biens ci-dessous sont fictifs et illustrent la présentation du catalogue.</p>
-    <div class="grid grid--2">
-      <div class="sale-card reveal">
-        <div class="sale-card__media">
-          <span class="sale-card__type">Vente judiciaire</span>
-          <img src="assets/img/ventes/placeholder.svg" alt="Photo à venir — Véhicule Toyota Hilux Double Cabine" loading="lazy">
-        </div>
-        <div class="sale-card__body">
-          <h3>Véhicule Toyota Hilux Double Cabine (2018)</h3>
-          <p>Véhicule saisi dans le cadre d'une procédure d'exécution, proposé à la vente aux enchères judiciaire.</p>
-          <div class="sale-card__meta">
-            <div><strong>Mise à prix</strong><span>8 500 000 FCFA</span></div>
-            <div><strong>Lieu</strong><span>San Pedro</span></div>
-          </div>
-          <a href="contact.html" class="btn btn--outline" style="width:100%; justify-content:center;">Contacter pour ce bien</a>
-        </div>
+    <!-- Rempli dynamiquement par js/ventes.js à partir de content/ventes/index.json (généré depuis le CMS) -->
+    <div id="ventes-catalogue" class="grid grid--2" aria-live="polite"></div>
+
+    <div id="ventes-empty" class="empty-state reveal" hidden>
+      <div class="empty-state__icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M12 3v14"/><path d="M4 8l8-5 8 5"/><path d="M6 8v6M18 8v6"/></svg>
       </div>
-      <div class="sale-card reveal">
-        <div class="sale-card__media">
-          <span class="sale-card__type">Vente volontaire</span>
-          <img src="assets/img/ventes/placeholder.svg" alt="Photo à venir — Terrain à usage commercial" loading="lazy">
-        </div>
-        <div class="sale-card__body">
-          <h3>Terrain à usage commercial — 600 m²</h3>
-          <p>Terrain viabilisé confié par son propriétaire pour une vente volontaire aux enchères publiques.</p>
-          <div class="sale-card__meta">
-            <div><strong>Mise à prix</strong><span>25 000 000 FCFA</span></div>
-            <div><strong>Lieu</strong><span>San Pedro</span></div>
-          </div>
-          <a href="contact.html" class="btn btn--outline" style="width:100%; justify-content:center;">Contacter pour ce bien</a>
-        </div>
-      </div>
+      <h3>Aucun bien n'est actuellement proposé à la vente</h3>
+      <p>Revenez consulter cette page régulièrement, ou contactez l'étude pour être informé(e) des prochaines ventes aux enchères correspondant à vos besoins.</p>
+      <a href="contact.html" class="btn btn--primary">Être informé(e) des prochaines ventes</a>
     </div>
   </div>
 </section>
@@ -220,5 +196,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/ventes.js"></script>
 </body>
 </html>

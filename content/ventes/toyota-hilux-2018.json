@@ -1,0 +1,9 @@
+{
+  "titre": "Véhicule Toyota Hilux Double Cabine (2018)",
+  "type": "judiciaire",
+  "description": "Véhicule saisi dans le cadre d'une procédure d'exécution, proposé à la vente aux enchères judiciaire.",
+  "mise_a_prix": 8500000,
+  "lieu": "San Pedro",
+  "photo": "/assets/img/ventes/placeholder.svg",
+  "actif": false
+}

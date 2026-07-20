@@ -94,10 +94,12 @@
 
 <section class="section">
   <div class="container" style="max-width: 760px;">
-    <span class="eyebrow">Article</span>
-    <h2>Qu'est-ce qu'un Commissaire de Justice ?</h2>
-    <p>Le Commissaire de Justice est un officier public et ministériel né de la fusion des professions d'huissier de justice et de commissaire-priseur judiciaire. Nommé par l'État, il exerce une mission de service public tout en étant rémunéré par les actes qu'il accomplit pour le compte de ses requérant(e)s. Son champ d'intervention est large : signification des actes de procédure, exécution des décisions de justice, réalisation de constats, recouvrement de créances, ventes aux enchères et administration de biens.</p>
-    <p>Contrairement à un avocat, il n'a pas vocation à plaider une cause, mais à garantir l'application concrète du droit et l'exécution effective des décisions de justice. Sa qualité d'officier ministériel lui confère une autorité particulière : les actes qu'il dresse et les constats qu'il établit bénéficient d'une force probante reconnue devant les juridictions. Le Cabinet YAH, dirigé par Maître Maho N. Jospin, exerce cette profession à San Pedro et intervient sur l'ensemble du territoire national de Côte d'Ivoire, au service des particuliers, des entreprises et des institutions.</p>
+    <!-- Rempli dynamiquement par js/documentation.js à partir de content/documentation/index.json (généré depuis le CMS) -->
+    <div id="articles-container"></div>
+    <div id="articles-empty" class="empty-state reveal" hidden>
+      <h3>Aucun article n'est disponible pour le moment</h3>
+      <p>Revenez consulter cette page prochainement.</p>
+    </div>
   </div>
 </section>
 
@@ -163,5 +165,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/documentation.js"></script>
 </body>
 </html>
