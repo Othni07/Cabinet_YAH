@@ -983,7 +983,7 @@ p { color: var(--color-text-muted); }
 .bottom-nav.open .bottom-nav__more-toggle svg { color: var(--color-accent-orange); }
 
 .bottom-nav__more {
-  display: none;
+  display: flex;
   flex-direction: column;
   position: absolute;
   right: 8px;
@@ -995,8 +995,19 @@ p { color: var(--color-text-muted); }
   box-shadow: var(--shadow-md);
   padding: 8px;
   min-width: 190px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.97);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
 }
-.bottom-nav.open .bottom-nav__more { display: flex; }
+.bottom-nav.open .bottom-nav__more {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
 .bottom-nav__more .bottom-nav__link {
   flex-direction: row;
   justify-content: flex-start;
