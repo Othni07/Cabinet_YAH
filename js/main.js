@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lien de navigation actif selon la page courante
   const current = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__links a').forEach(link => {
+  document.querySelectorAll('.nav__links a, .bottom-nav__link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === current) link.classList.add('active');
   });
