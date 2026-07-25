@@ -1,16 +1,6 @@
 // Cabinet YAH — script principal
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Menu mobile
-  const toggle = document.querySelector('.nav__toggle');
-  const nav = document.querySelector('.nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.querySelectorAll('.nav__links a').forEach(link => {
-      link.addEventListener('click', () => nav.classList.remove('open'));
-    });
-  }
-
   // Lien de navigation actif selon la page courante
   const current = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__links a, .bottom-nav__link').forEach(link => {

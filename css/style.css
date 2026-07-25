@@ -205,19 +205,10 @@ p { color: var(--color-text-muted); }
 }
 
 .nav__links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0; right: 0;
-  background: var(--color-bg);
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
-  gap: 18px;
-  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
-.nav.open .nav__links { display: flex; }
 .nav__links a {
   font-size: 0.92rem;
   font-weight: 500;
@@ -247,22 +238,6 @@ p { color: var(--color-text-muted); }
 .nav__links a.active::before { display: none; }
 
 .nav__actions { display: flex; align-items: center; gap: 18px; }
-
-.nav__toggle {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-.nav__toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--color-primary-dark);
-  display: block;
-}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -508,6 +483,30 @@ p { color: var(--color-text-muted); }
 .cta-banner p { color: #E9DFCF; }
 .cta-banner__actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
+/* ---------- Featured service banner ---------- */
+.featured-service {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  border-radius: 16px;
+  padding: 48px;
+}
+.featured-service__icon {
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+.featured-service__body .eyebrow { color: var(--color-accent); }
+.featured-service__body h2 { color: #fff; margin: 10px 0 14px; }
+.featured-service__body p { color: #E9DFCF; margin-bottom: 24px; max-width: 620px; }
+
 /* ---------- Page header (interior pages) ---------- */
 .page-header {
   background: linear-gradient(135deg, #F1E7D8, #EADFCB);
@@ -645,6 +644,7 @@ p { color: var(--color-text-muted); }
 .mission h3 { margin-bottom: 10px; }
 .mission p { margin-bottom: 12px; }
 .mission ul { display: flex; flex-direction: column; gap: 8px; }
+.mission .card__link { margin-top: 14px; }
 .mission ul li {
   display: flex;
   gap: 10px;
@@ -989,7 +989,7 @@ p { color: var(--color-text-muted); }
 
 @media (max-width: 720px) {
   .nav__actions .btn--outline { display: none; }
-  .nav__toggle { display: none; }
+  .nav__links { display: none; }
   .bottom-nav { display: block; }
   body { padding-bottom: 66px; }
   .back-to-top { bottom: 82px; }
@@ -1000,6 +1000,7 @@ p { color: var(--color-text-muted); }
   .form-row { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; }
   .cta-banner { flex-direction: column; text-align: center; }
+  .featured-service { flex-direction: column; text-align: center; padding: 36px 28px; }
   .section { padding: 64px 0; }
 }
 
