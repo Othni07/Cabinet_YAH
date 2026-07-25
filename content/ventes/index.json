@@ -1,12 +1,12 @@
 [
   {
-    "titre": "Terrain à usage commercial — 600 m²",
-    "type": "volontaire",
-    "description": "Terrain viabilisé confié par son propriétaire pour une vente volontaire aux enchères publiques.",
-    "mise_a_prix": 25000000,
     "lieu": "San Pedro",
-    "photo": "/assets/img/ventes/placeholder.svg",
-    "actif": false
+    "actif": true,
+    "type": "volontaire",
+    "titre": "Maison basse",
+    "description": "villa duplex\n7 pièces \ngarage pour 4 véhicules\n",
+    "mise_a_prix": 100000000,
+    "photo": "villa duplex"
   },
   {
     "titre": "Véhicule Toyota Hilux Double Cabine (2018)",
