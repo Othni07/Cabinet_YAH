@@ -8,6 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href === current) link.classList.add('active');
   });
 
+  // Menu "Plus" de la barre de navigation mobile
+  const bottomNav = document.querySelector('.bottom-nav');
+  const moreToggle = document.querySelector('.bottom-nav__more-toggle');
+  if (bottomNav && moreToggle) {
+    if (bottomNav.querySelector('.bottom-nav__more .bottom-nav__link.active')) {
+      moreToggle.classList.add('active');
+    }
+    moreToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = bottomNav.classList.toggle('open');
+      moreToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    bottomNav.querySelectorAll('.bottom-nav__more .bottom-nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        bottomNav.classList.remove('open');
+        moreToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (bottomNav.classList.contains('open') && !bottomNav.contains(e.target)) {
+        bottomNav.classList.remove('open');
+        moreToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   // Année dynamique dans le footer
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

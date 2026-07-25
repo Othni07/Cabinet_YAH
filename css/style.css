@@ -973,6 +973,43 @@ p { color: var(--color-text-muted); }
 .bottom-nav__link.active { color: var(--color-primary-dark); }
 .bottom-nav__link.active svg { color: var(--color-accent-orange); }
 
+.bottom-nav__more-toggle {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+.bottom-nav.open .bottom-nav__more-toggle { color: var(--color-primary-dark); }
+.bottom-nav.open .bottom-nav__more-toggle svg { color: var(--color-accent-orange); }
+
+.bottom-nav__more {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 8px;
+  bottom: 100%;
+  margin-bottom: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  min-width: 190px;
+}
+.bottom-nav.open .bottom-nav__more { display: flex; }
+.bottom-nav__more .bottom-nav__link {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: left;
+}
+.bottom-nav__more .bottom-nav__link svg { width: 18px; height: 18px; }
+.bottom-nav__more .bottom-nav__link:hover,
+.bottom-nav__more .bottom-nav__link.active { background: var(--color-bg-alt); }
+
 /* =========================================================
    Responsive
    ========================================================= */
